@@ -3,6 +3,7 @@
 const { readFile: read } = require('fs');
 const { resolve, format, dirname, basename, extname } = require('path');
 const Handlebars = require('handlebars');
+const colors = require('colors');
 
 
 module.exports = (opts) => {
@@ -16,7 +17,7 @@ module.exports = (opts) => {
         const partials = getFiles(files, dirName);
 
         if (!partials) {
-            console.log('Metalsmith HBS Relative Partial plugin exited: No partials found to process');
+            console.log('Metalsmith HBS Relative Partial plugin exited: No partials found to process'.yellow.bgBlack.bold);
             done();
             return;
         }
@@ -35,9 +36,6 @@ module.exports = (opts) => {
 */
 
 function onFile(file, src, dirName) {
-    // if (!file) { throw new Error(`Metalsmith HBS Relative Partial Error - Invalid file: ${file}`) }
-    // if (!dirName) { throw new Error(`Metalsmith HBS Relative Partial Error - Invalid dirName: ${dirName}`) }
-
     const dir = new RegExp(`/${dirName}`);
     const directory = dirname(file).replace(dir, '');
     const id = format({
