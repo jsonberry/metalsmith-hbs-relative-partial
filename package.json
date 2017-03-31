@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-hbs-relative-partial",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Metalsmith plugin to discovery hbs partials relative to the template they are being used in",
   "main": "index.js",
   "scripts": {
