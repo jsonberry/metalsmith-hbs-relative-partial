@@ -3,7 +3,7 @@ Install: npm install metalsmith-hbs-realtive-partial
 
 ## Purpose
 
-Place Handlebars.js template partials in a directory relative to a view they are used in. Best used with in conjunction with [metalsmith-in-place](https://github.com/superwolff/metalsmith-in-place).
+Place Handlebars.js template partials in a directory relative to a view they are used in. Best used in conjunction with [metalsmith-in-place](https://github.com/superwolff/metalsmith-in-place).
 
 ## Example
 
@@ -63,3 +63,12 @@ The name of the directory that your partials will sit in.
 Example: 'components'... any partials nested under the source in a directory named 'components' will be registered with Handlebars.
 The name of the partial will be it's relative path to the area of the application. An `aside.hbs` partial in `src/legal/components` would be referred to like this: `{{> legal/aside }}`.
 Default: `partials`
+
+
+## License
+MIT
+
+## Author
+[Jason Awbrey](https://jason-awbrey.com)
+Twitter - @jsawbrey
+[Github](https://github.com/jsonberry)
