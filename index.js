@@ -5,7 +5,6 @@ const { resolve, format, dirname, basename, extname } = require('path');
 const Handlebars = require('handlebars');
 const colors = require('colors');
 
-
 module.exports = (opts) => {
     const {
         dirName: dirName = 'partials'
@@ -22,10 +21,10 @@ module.exports = (opts) => {
             return;
         }
 
-        partials.forEach((file) => arrPromises.push(onFile(file, src, dirName)));
+        partials.forEach((file) => arrPromises.push(buildPartialInfo(file, src, dirName)));
 
         Promise.all(arrPromises)
-            .then((d) => d.forEach((p) => hbsRegPart(p)))
+            .then((d) => d.forEach((p) => hbsRegisterPartial(p)))
             .then((d) => done())
             .catch((e) => done(e));
     };
@@ -35,7 +34,7 @@ module.exports = (opts) => {
 *    Helpers
 */
 
-function onFile(file, src, dirName) {
+function buildPartialInfo(file, src, dirName) {
     const dir = new RegExp(`/${dirName}`);
     const directory = dirname(file).replace(dir, '');
     const id = format({
@@ -54,7 +53,7 @@ function onFile(file, src, dirName) {
     })
 }
 
-function hbsRegPart(partial) {
+function hbsRegisterPartial(partial) {
     const {
         id: i = false,
         contents: c = false,
@@ -76,5 +75,5 @@ function getFiles(files, dirName) {
         return acc;
     }, []);
 
-    return (partials.length === 0 ?  false :  partials);
+    return (partials.length === 0 ? false : partials);
 }
