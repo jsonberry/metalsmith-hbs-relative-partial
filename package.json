@@ -11,5 +11,8 @@
     "url": "git@github:jsonberry/metalsmith-hbs-relative-partial.git"
   },
   "author": "Jason Awbrey",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "handlebars": "^4.0.6"
+  }
 }
