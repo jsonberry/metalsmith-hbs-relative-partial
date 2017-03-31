@@ -69,6 +69,6 @@ Default: `partials`
 MIT
 
 ## Author
-[Jason Awbrey](https://jason-awbrey.com)
-Twitter - @jsawbrey
-[Github](https://github.com/jsonberry)
+* [Jason Awbrey](https://jason-awbrey.com)
+* [Twitter](https://twitter.com/jsawbrey) - @jsawbrey
+* [Github](https://github.com/jsonberry)
