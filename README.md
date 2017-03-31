@@ -40,7 +40,6 @@ In `metalsmith.json`:
 {
   "plugins": {
     "metalsmith-hbs-relative-partial": {
-      "source": "src",
       "pattern": "partials"
     }
   }
@@ -53,15 +52,11 @@ const inPlace = require('metalsmith-in-place');
 
 require('metalsmith')(__dirname)
     .use(relativePartial({
-        source: 'src',
         dirName: 'partials'
     }))
-  .build()
+    .use(inPlace())
+    .build()
 ```
-
-### source
-The top level source directory of your app.
-Default: `src`
 
 ### dirName
 The name of the directory that your partials will sit in.
