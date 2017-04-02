@@ -40,7 +40,7 @@ In `metalsmith.json`:
 {
   "plugins": {
     "metalsmith-hbs-relative-partial": {
-      "pattern": "partials"
+      "dirName": "partials"
     }
   }
 }
